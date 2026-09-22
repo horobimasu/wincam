@@ -1,4 +1,4 @@
-package win_cam
+package wincam
 
 import (
 	"fmt"
