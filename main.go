@@ -28,7 +28,6 @@ var (
 
 	initCOM   = ole32.NewProc("CoInitialize")
 	uninitCOM = ole32.NewProc("CoUninitialize")
-	createCOM = ole32.NewProc("CoCreateInstance")
 
 	mediaStart            = mfplat.NewProc("MFStartup")
 	mediaStop             = mfplat.NewProc("MFShutdown")

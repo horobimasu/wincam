@@ -1,8 +1,15 @@
-# go-cam
-pure golang utility to take webcam pictures on windows with no other utilities
+# win-cam
+pure golang utility to take webcam pictures on windows with no other utilities (only tested on windows 11)
 
-literally every single other golang webcam package for windows requires some other retarded dependencies to be installed like opencv or electron or wtv else, this dosnt need any of that as it just uses windows syscalls
+literally every single other golang webcam package for windows requires some other retarded dependencies to be installed like opencv or electron or wtv else, this doesnt need any of that as it just uses windows syscalls
 
-this is not a package you can just require in your project btw, you need to copy the code in `main.go` and paste it in your project
+# usage
+install:
+```bash
+go get github.com/horobimasu/wincam
+```
 
-(only tested on windows 11)
+capture webcam:
+```go
+wincam.CaptureWebcam() (*bytes.Buffer, error)
+```
