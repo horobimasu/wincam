@@ -40,6 +40,7 @@ var (
 )
 
 var (
+	// MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE
 	attributeSource = syscall.GUID{
 		Data1: 0xC60AC5FE,
 		Data2: 0x252A,
@@ -47,6 +48,7 @@ var (
 		Data4: [8]byte{0xA0, 0xEF, 0xBC, 0x8F, 0xA5, 0xF7, 0xCA, 0xD3},
 	}
 
+	// MF_DEVSOURCE_ATTRIBUTE_SOURCE_TYPE_VIDCAP_GUID
 	attributeSourceVideo = syscall.GUID{
 		Data1: 0x8AC3587A,
 		Data2: 0x4AE7,
@@ -54,6 +56,7 @@ var (
 		Data4: [8]byte{0x99, 0xE0, 0x0A, 0x60, 0x13, 0xEE, 0xF9, 0x0F},
 	}
 
+	// IID_IMFMediaSource
 	mediaSource = syscall.GUID{
 		Data1: 0x279A808D,
 		Data2: 0xAEC7,
@@ -61,6 +64,7 @@ var (
 		Data4: [8]byte{0x9C, 0x6B, 0xA6, 0xB4, 0x92, 0xC7, 0x8A, 0x66},
 	}
 
+	// MF_MT_MAJOR_TYPE
 	mediaMajortype = syscall.GUID{
 		Data1: 0x48ABA7A7,
 		Data2: 0xA5A2,
@@ -68,6 +72,7 @@ var (
 		Data4: [8]byte{0xA2, 0x3B, 0x4A, 0x40, 0x5B, 0x93, 0xA3, 0x18},
 	}
 
+	// MF_MT_SUBTYPE
 	mediaSubtype = syscall.GUID{
 		Data1: 0xF7E34C9A,
 		Data2: 0x42E8,
@@ -75,6 +80,7 @@ var (
 		Data4: [8]byte{0xB7, 0x4B, 0xCB, 0x29, 0xD7, 0x2C, 0x35, 0xE5},
 	}
 
+	// MFMediaType_Video
 	videoMedia = syscall.GUID{
 		Data1: 0x73646976,
 		Data2: 0x0000,
@@ -82,6 +88,7 @@ var (
 		Data4: [8]byte{0x80, 0x00, 0x00, 0xAA, 0x00, 0x38, 0x9B, 0x71},
 	}
 
+	// MFVideoFormat_RGB24
 	videoFormat = syscall.GUID{
 		Data1: 0x00000014,
 		Data2: 0x0000,
@@ -89,6 +96,7 @@ var (
 		Data4: [8]byte{0x80, 0x00, 0x00, 0xAA, 0x00, 0x38, 0x9B, 0x71},
 	}
 
+	// MF_MT_FRAME_SIZE
 	frameSize = syscall.GUID{
 		Data1: 0x1652C33D,
 		Data2: 0xD6B2,
@@ -252,7 +260,7 @@ func CaptureWebcam() (*bytes.Buffer, error) {
 	case _YUY2:
 		pixels = ParseYUY2(rawData, width, height)
 
-	case _RGB24:
+	case _RGB24: // yeah
 		pixels = rawData
 
 	case _RGB32:
